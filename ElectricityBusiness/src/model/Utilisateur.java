@@ -1,0 +1,48 @@
+package model;
+
+import java.util.UUID;
+
+public class Utilisateur {
+    public UUID id;
+    public String email;
+    public String motDePasse;
+    public int codeValidation;
+    public boolean estValide;
+
+
+    public UUID getId() {
+        return id;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+    public int getCodeValidation() {
+        return codeValidation;
+    }
+    public void setCodeValidation(int codeValidation) {
+        this.codeValidation = codeValidation;
+    }
+    public boolean isEstValide() {
+        return estValide;
+    }
+    public void setEstValide(boolean estValide) {
+        this.estValide = estValide;
+    }
+
+    public Utilisateur( String email, String motDePasse, int codeValidation) {
+        this.id = java.util.UUID.randomUUID();
+        this.email = email;
+        this.motDePasse = motDePasse;
+        this.codeValidation = codeValidation;
+        this.estValide = true;
+    }
+}

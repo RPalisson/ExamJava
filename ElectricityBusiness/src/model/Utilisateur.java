@@ -2,7 +2,9 @@ package model;
 
 import java.util.UUID;
 
-public class Utilisateur {
+import interfaces.AuthentificationService;
+
+public class Utilisateur extends AuthentificationService{
     public UUID id;
     public String email;
     public String motDePasse;
@@ -38,11 +40,18 @@ public class Utilisateur {
         this.estValide = estValide;
     }
 
-    public Utilisateur( String email, String motDePasse, int codeValidation) {
+    public Utilisateur( String email, String motDePasse) {
         this.id = java.util.UUID.randomUUID();
         this.email = email;
         this.motDePasse = motDePasse;
-        this.codeValidation = codeValidation;
-        this.estValide = true;
+        this.codeValidation = (int)(Math.random()*1000);
+        this.estValide = false;
+    }
+
+    public void validation(int codeValidation){
+        if (codeValidation == this.codeValidation) {
+            setEstValide(true);;
+        }
+        return;
     }
 }

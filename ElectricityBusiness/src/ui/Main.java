@@ -17,6 +17,9 @@ public class Main {
         Utilisateur utilisateurConnecte = null;
         String email;
         String motDePasse;
+        String selection;
+        
+        Scanner input = new Scanner(System.in);
 
         ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
         ArrayList<BorneRecharge> bornes = new ArrayList<BorneRecharge>();
@@ -28,21 +31,20 @@ public class Main {
         lieux.add(new LieuRecharge("27 allée des Seigles"));
         reservations.add(new Reservation(utilisateurs.get(0), bornes.get(0), LocalDate.now(), LocalDate.of(2025, 05, 25)));
 
-        System.out.println("=== Electricity Business ==="
-            +"1. S'inscrire"
-            +"2. Valider l'inscription"
-            +"3. Se connecter"
-            +"4. Rechercher & réserver une borne"
-            +"5. Gérer mes réservations"
-            +"6. Administration (lieux / bornes)"
-            +"7. Imprimer reçu réservation"
-            +"0. Quitter"
+        System.out.println("=== Electricity Business ===\n"
+            +"1. S'inscrire\n"
+            +"2. Valider l'inscription\n"
+            +"3. Se connecter\n"
+            +"4. Rechercher & réserver une borne\n"
+            +"5. Gérer mes réservations\n"
+            +"6. Administration (lieux / bornes)\n"
+            +"7. Imprimer reçu réservation\n"
+            +"0. Quitter\n"
             );
 
         while(active){ 
-            Scanner input = new Scanner(System.in);
             System.out.println("Choisissez");
-            String selection = input.nextLine();
+            selection = input.nextLine();
             switch (selection) {
                 case "0":
                     active= false;
@@ -91,9 +93,11 @@ public class Main {
                     choix = input.nextInt();
                     if (choix==1) {
                         reservations.get(0).gererReservation(StatutReservation.VALIDE);
+                        System.out.println("Validation réussie");
                     }
                     if (choix==2) {
                         reservations.get(0).gererReservation(StatutReservation.ANNULE);
+                        System.out.println("Annulation réussie");
                     }
                     break;
             
@@ -102,9 +106,11 @@ public class Main {
                     choix = input.nextInt();
                     if (choix==1) {
                         lieux.get(0).modificationLieu("26 Allée des Seigles");
+                        System.out.println("Modification Lieu réussie");
                     }
                     if (choix==2) {
                         bornes.get(0).modificationBorne(7);
+                        System.out.println("Modification Borne réussie");
                     }
                     break;
 
@@ -116,7 +122,7 @@ public class Main {
                     System.out.println("Saisie invalide, recommencez");
                     break;
             }
-            input.close();
         }
+        input.close();
     }
 }

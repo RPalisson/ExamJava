@@ -59,4 +59,10 @@ public class Reservation extends ReservationService{
         this.setStatut(statut);
         return;
     }
+
+    @Override
+    public String toString() {
+        return "Reservation [id=" + id + ", utilisateur=" + utilisateur + ", borne=" + borne + ", dateDebut="
+                + dateDebut + ", dateFin=" + dateFin + ", statut=" + statut + "]";
+    }    
 }

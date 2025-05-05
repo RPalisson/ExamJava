@@ -49,4 +49,9 @@ public class BorneRecharge extends BorneService{
         }
         return true;
     }
+    
+    @Override
+    public String toString() {
+        return "BorneRecharge [id=" + id + ", etat=" + etat + ", tarifHoraire=" + tarifHoraire + "]";
+    }
 }

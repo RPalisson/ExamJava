@@ -38,4 +38,9 @@ public class LieuRecharge extends LieuService{
         this.setNom(nom);
         return;
     }
+    
+    @Override
+    public String toString() {
+        return "LieuRecharge [id=" + id + ", nom=" + nom + ", bornes=" + bornes + "]";
+    }
 }

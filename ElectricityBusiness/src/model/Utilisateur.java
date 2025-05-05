@@ -54,4 +54,10 @@ public class Utilisateur extends AuthentificationService{
         }
         return;
     }
+    
+    @Override
+    public String toString() {
+        return "Utilisateur [id=" + id + ", email=" + email + ", motDePasse=" + motDePasse + ", codeValidation="
+                + codeValidation + ", estValide=" + estValide + "]";
+    }
 }

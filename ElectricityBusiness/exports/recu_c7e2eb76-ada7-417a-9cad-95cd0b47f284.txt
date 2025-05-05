@@ -1,0 +1,1 @@
+Reservation [id=38015c49-041e-4366-b8e3-34abcf47a208, utilisateur=Utilisateur [id=c7e2eb76-ada7-417a-9cad-95cd0b47f284, email=pablo.picasso@rouge.fr, motDePasse=Guernica, codeValidation=943, estValide=false], borne=BorneRecharge [id=9ebc42b7-15af-4142-b55a-48dd467e6eb0, etat=DISPONIBLE, tarifHoraire=12.0], dateDebut=2025-05-05, dateFin=2025-05-25, statut=EN_ATTENTE]
